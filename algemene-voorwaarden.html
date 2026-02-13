@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algemene Voorwaarden | Dierenoppas Mel</title>
+    <meta name="description" content="Algemene voorwaarden van Melta bv (Dierenoppas Mel) - Huiselijke hondenopvang in de Westhoek.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --warm-cream: #FFF8F0;
+            --soft-peach: #FDEBD3;
+            --golden: #a7714b;
+            --golden-dark: #B8912E;
+            --warm-brown: #6B4226;
+            --dark-brown: #3E2415;
+            --sage-green: #7A9E7E;
+            --sage-light: #E8F0E9;
+            --text: #3E2415;
+            --text-light: #6B4226;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(62, 36, 21, 0.08);
+            --shadow-lg: 0 8px 40px rgba(62, 36, 21, 0.12);
+            --radius: 16px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text);
+            background: var(--warm-cream);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Onest', sans-serif;
+            line-height: 1.3;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 248, 240, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 168, 83, 0.15);
+            box-shadow: var(--shadow);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Onest', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--warm-brown);
+        }
+
+        .nav-logo img {
+            height: 64px;
+            width: auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--golden-dark);
+            transition: color 0.3s;
+        }
+
+        .back-link:hover { color: var(--golden); }
+
+        /* Content */
+        .terms-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, var(--warm-cream) 0%, var(--soft-peach) 50%, #fce4c4 100%);
+            text-align: center;
+        }
+
+        .terms-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--dark-brown);
+            margin-bottom: 12px;
+        }
+
+        .terms-hero p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .terms-content {
+            padding: 60px 0 100px;
+        }
+
+        .terms-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 48px;
+            box-shadow: var(--shadow);
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .terms-card h2 {
+            font-size: 1.5rem;
+            color: var(--dark-brown);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--soft-peach);
+        }
+
+        .terms-card h2:first-child {
+            margin-top: 0;
+        }
+
+        .terms-card p {
+            margin-bottom: 16px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .terms-card ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .terms-card li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .terms-card li::marker {
+            color: var(--golden);
+        }
+
+        .terms-card strong {
+            color: var(--dark-brown);
+        }
+
+        .article-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--soft-peach);
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--golden-dark);
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        .terms-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .terms-item p {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s;
+        }
+
+        .footer a:hover { color: var(--golden); }
+
+        .footer-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .terms-card { padding: 28px 20px; }
+            .terms-hero { padding: 120px 0 40px; }
+            .footer-inner { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="Logo.png" alt="Dierenoppas Mel logo">
+            </a>
+            <a href="index.html" class="back-link">&#8592; Terug naar home</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="terms-hero">
+        <div class="container">
+            <h1>Algemene Voorwaarden</h1>
+            <p>Melta bv &mdash; Dierenoppas Mel</p>
+        </div>
+    </section>
+
+    <!-- TERMS CONTENT -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-card">
+
+                <!-- Artikel 1 -->
+                <h2>Artikel 1: Algemene bepalingen</h2>
+
+                <div class="terms-item">
+                    <span class="article-number">1</span>
+                    <p>Melta bv (ondernemingsnummer 0659.849.230), vertegenwoordigd door Vandendriessche Melanie, biedt dierenopvangdiensten aan, inclusief huisbezoeken, uitlaatservice en vervoer van dieren zoals honden, katten, pony's, schapen, kippen en cavia's.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">2</span>
+                    <p>Deze voorwaarden gelden voor alle handelingen van Melta bv, inclusief aanbiedingen en overeenkomsten met opdrachtgevers.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">3</span>
+                    <p>Afwijkingen van de algemene voorwaarden zijn slechts geldig indien deze schriftelijk en uitdrukkelijk tussen Melta bv (Dierenoppas Mel) en de opdrachtgever zijn overeengekomen.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">4</span>
+                    <p>Melta bv is niet eigenaar van de dieren.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">5</span>
+                    <p>Het bedrijf gaat correct en verantwoord met dieren om.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">6</span>
+                    <p>Melta bv behoudt het recht om:</p>
+                </div>
+                <ul>
+                    <li>De opdracht af te wijzen en dit snel aan de opdrachtgever mee te delen.</li>
+                    <li>Dieren te weigeren bij gevaar voor personen of andere dieren.</li>
+                    <li>De opdracht om vakantie op non-actief te zetten (met 2 weken vooraankondiging).</li>
+                    <li>Dieren te weigeren bij besmettelijke ziekten.</li>
+                    <li>De opdrachtgever in te lichten over gezondheids- of gedragsproblemen.</li>
+                </ul>
+
+                <div class="terms-item">
+                    <span class="article-number">7</span>
+                    <p>De opdrachtgever heeft een familiale verzekering waarbij huisdieren zijn meeverzekerd.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">8</span>
+                    <p>Melta bv is niet aansprakelijk voor weggelopen dieren maar zal alles in het werk stellen om de dieren terug te vinden.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">9</span>
+                    <p>Melta bv heeft een burgerlijke aansprakelijkheidsverzekering.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">10</span>
+                    <p>Melta bv kan niet aansprakelijk gesteld worden voor schade aan het huis of inboedel van de opdrachtgever die het dier heeft aanricht.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">11</span>
+                    <p>Bij huissleuteluitgifte verbindt Melta bv zich deze zorgvuldig te bewaren, niet te kopi&euml;ren, niet van adres te voorzien, enkel voor de afgesproken opdracht te gebruiken en terug te geven bij be&euml;indiging.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">12</span>
+                    <p>Melta bv kan niet aansprakelijk worden gesteld voor risico's of ongevallen die voortkomen uit gebreken aan de tuin of omheining.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">13</span>
+                    <p>Bij vroeger vertrek uit vakantie wordt de volledige gereserveerde periode gefactureerd.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">14</span>
+                    <p>De opdrachtgever zorgt voor voldoende voedsel; anders worden bijgehaalde voedselkosten gefactureerd.</p>
+                </div>
+
+                <!-- Artikel 2 -->
+                <h2>Artikel 2: Totstandkoming en wijziging overeenkomst</h2>
+
+                <div class="terms-item">
+                    <span class="article-number">1</span>
+                    <p>Een overeenkomst komt slechts tot stand door schriftelijke overeenstemming tussen Melta bv (Dierenoppas Mel) en haar opdrachtgever. Dit kan zowel per mail, bericht, WhatsApp, Messenger, enz.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">2</span>
+                    <p>Schriftelijk bewijs geldt als bindende overeenkomst.</p>
+                </div>
+
+                <!-- Artikel 3 -->
+                <h2>Artikel 3: Prijzen en betaling</h2>
+
+                <div class="terms-item">
+                    <span class="article-number">1</span>
+                    <p>Alle prijzen zijn inclusief BTW en heffingen, tenzij anders vermeld.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">2</span>
+                    <p>Prijzen gelden slechts voor genoemde goederen en diensten; aanvullende diensten worden apart gefactureerd tegen geldende tarieven.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">3</span>
+                    <p>Kilometervergoeding wordt berekend via Google Maps vanaf Elzentapstraat 4, 8630 Veurne.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">4</span>
+                    <p>Alle verschuldigde bedragen zijn contant of op rekening BE65 0017 9169 6696 te betalen binnen de 8 dagen na factuurdatum.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">5</span>
+                    <p>Huisdieren in huiselijke opvang worden alleen teruggegeven na volledige betaling.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">6</span>
+                    <p>Facturen voor huisbezoeken worden betaald volgens afgesproken voorwaarden binnen 8 dagen.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">7</span>
+                    <p>Bij laattijdige betaling is de opdrachtgever in verzuim en is hij de wettelijke rente verschuldigd.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">8</span>
+                    <p>Kosten van invordering, zowel gerechtelijk als buitengerechtelijk, zijn voor de rekening van de opdrachtgever, zulks met een minimum van &euro;250.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">9</span>
+                    <p>Melta bv kan 10% voorschot vragen, schriftelijk bevestigd, betaalbaar voor aanvang op rekening BE65 0017 9169 6696.</p>
+                </div>
+
+                <div class="terms-item">
+                    <span class="article-number">10</span>
+                    <p>Betwistingen over facturen moeten binnen 8 dagen schriftelijk gemeld worden.</p>
+                </div>
+
+                <!-- Artikel 4 -->
+                <h2>Artikel 4: Ontbinding en opzegging</h2>
+
+                <div class="terms-item">
+                    <span class="article-number">1</span>
+                    <p>Indien de opdrachtgever de overeenkomst wenst te annuleren dient hij dit 3 weken voor de opdracht te doen. Indien dit niet gebeurt zal er een vergoeding gevraagd worden van 50% van de overeengekomen prijs.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span>&copy; 2025 Dierenoppas Mel. Alle rechten voorbehouden.</span>
+                <a href="index.html">Terug naar home</a>
+                <span>Gemaakt met &#128153; voor dieren</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

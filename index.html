@@ -1,0 +1,2126 @@
+﻿<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dierenoppas Mel | Huiselijke Hondenopvang in de Westhoek</title>
+    <meta name="description" content="Luxe hondenhotel in een gezellige thuisomgeving in Veurne. Geen kennels, wel een omheinde tuin van 3.000m². Huiselijke hondenopvang & dierenoppas aan huis in de Westhoek.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --warm-cream: #FFF8F0;
+            --soft-peach: #FDEBD3;
+            --golden: #a7714b;
+            --golden-dark: #B8912E;
+            --warm-brown: #6B4226;
+            --dark-brown: #3E2415;
+            --sage-green: #7A9E7E;
+            --sage-light: #E8F0E9;
+            --text: #3E2415;
+            --text-light: #6B4226;
+            --white: #FFFFFF;
+            --shadow: 0 4px 20px rgba(62, 36, 21, 0.08);
+            --shadow-lg: 0 8px 40px rgba(62, 36, 21, 0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text);
+            background: var(--warm-cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Onest', sans-serif;
+            line-height: 1.3;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 248, 240, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 168, 83, 0.15);
+            transition: box-shadow 0.3s;
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Onest', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--warm-brown);
+        }
+
+        .nav-logo img {
+            height: 90px;
+            width: auto;
+        }
+
+        .nav-logo .paw-icon {
+            font-size: 1.6rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--golden);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--golden-dark); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: var(--golden);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            background: var(--golden-dark) !important;
+            color: var(--white) !important;
+            transform: translateY(-1px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .mobile-toggle span {
+            width: 26px;
+            height: 2.5px;
+            background: var(--warm-brown);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, var(--warm-cream) 0%, var(--soft-peach) 50%, #fce4c4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212,168,83,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(122,158,126,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content { max-width: 540px; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--sage-green);
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            color: var(--dark-brown);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #a7714b;
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 36px;
+            max-width: 460px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--golden);
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(212, 168, 83, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--golden-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 168, 83, 0.45);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--warm-brown);
+            border: 2px solid rgba(107, 66, 38, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--golden);
+            color: var(--golden-dark);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(107, 66, 38, 0.1);
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 1.6rem;
+            font-family: 'Onest', sans-serif;
+            color: #a7714b;
+        }
+
+        .stat-item span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .hero-review-score strong {
+            color: #fbbc05 !important;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-main {
+            width: 420px;
+            height: 500px;
+            border-radius: 200px 200px 40px 40px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-main img,
+        .hero-image-main video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .hero-image-main::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border-radius: 196px 196px 36px 36px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-float-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 14px 20px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-float-card.card-1 {
+            top: 40px;
+            left: -30px;
+            animation-delay: 0s;
+        }
+
+        .hero-float-card.card-2 {
+            bottom: 60px;
+            right: -20px;
+            animation-delay: 1.5s;
+        }
+
+        .float-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--golden-dark);
+        }
+
+        .float-icon.green { background: var(--sage-light); }
+        .float-icon.peach { background: var(--soft-peach); }
+
+        .float-text strong { display: block; font-size: 0.85rem; }
+        .float-text span { font-size: 0.75rem; color: var(--text-light); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ===== TRUST BAR ===== */
+        .trust-bar {
+            background: var(--white);
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(212,168,83,0.1);
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .trust-item .icon {
+            font-size: 1.4rem;
+        }
+
+        /* ===== SECTIONS GENERAL ===== */
+        section { padding: 100px 0; }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--golden);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            color: var(--dark-brown);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        /* ===== ABOUT ===== */
+        .about {
+            background: var(--white);
+        }
+
+        .about .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .about-img {
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--soft-peach);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .about-feature .check {
+            width: 28px;
+            height: 28px;
+            background: var(--sage-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--warm-cream); }
+
+        .services-list-layout {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-list-content {
+            background: var(--soft-peach);
+            border-radius: var(--radius);
+            padding: 48px;
+        }
+
+        .services-checklist {
+            list-style: none;
+            margin-bottom: 28px;
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .services-checklist li {
+            padding: 8px 0;
+            font-size: 1rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            break-inside: avoid;
+        }
+
+        .services-checklist li::before {
+            content: '\2022';
+            color: var(--golden-dark);
+            font-size: 1.4rem;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        .services-highlight {
+            font-weight: 700;
+            color: var(--dark-brown);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .services-checklist { columns: 1; }
+            .services-list-content { padding: 28px 20px; }
+        }
+
+        .services-list-images {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .services-img {
+            width: 260px;
+            height: 260px;
+            border-radius: 50% 50% 50% 20%;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .services-img:nth-child(2) {
+            align-self: flex-end;
+            border-radius: 50% 50% 20% 50%;
+        }
+
+        .services-img:nth-child(3) {
+            align-self: flex-start;
+            border-radius: 20% 50% 50% 50%;
+        }
+
+        .services-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 992px) {
+            .services-list-layout { grid-template-columns: 1fr; gap: 40px; }
+            .services-list-images { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+            .services-img { width: 200px; height: 200px; }
+            .services-img:nth-child(2) { align-self: center; }
+            .services-img:nth-child(3) { align-self: center; }
+        }
+
+        @media (max-width: 480px) {
+            .services-list-content { padding: 28px 20px; }
+            .services-img { width: 160px; height: 160px; }
+        }
+
+        /* ===== FEATURES / WHY CHOOSE ===== */
+        .features { background: var(--white); }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .feature-card {
+            display: flex;
+            gap: 20px;
+            padding: 32px;
+            background: var(--warm-cream);
+            border-radius: var(--radius);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover { transform: translateY(-4px); }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: var(--dark-brown);
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* ===== PRICING ===== */
+        .pricing { background: var(--warm-cream); }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--golden);
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--golden);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+
+        .pricing-header {
+            padding: 36px 32px 24px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212,168,83,0.1);
+        }
+
+        .pricing-header .emoji { font-size: 2.5rem; margin-bottom: 12px; display: block; }
+
+        .pricing-header h3 {
+            font-size: 1.3rem;
+            color: var(--dark-brown);
+            margin-bottom: 4px;
+        }
+
+        .pricing-header .desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .pricing-body {
+            padding: 28px 32px;
+            flex: 1;
+        }
+
+        .pricing-body ul {
+            list-style: none;
+        }
+
+        .pricing-body li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212,168,83,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .pricing-body li:last-child { border-bottom: none; }
+
+        .pricing-body li span:last-child {
+            font-weight: 700;
+            color: var(--golden-dark);
+        }
+
+        .pricing-footer {
+            padding: 0 32px 32px;
+            text-align: center;
+        }
+
+        .pricing-footer .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== GALLERY CAROUSEL ===== */
+        .gallery {
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .gallery-carousel {
+            position: relative;
+        }
+
+        .gallery-carousel-track {
+            overflow: hidden;
+            border-radius: var(--radius);
+        }
+
+        .gallery-carousel-inner {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-carousel-slide {
+            min-width: calc(100% / 3);
+            padding: 4px 8px;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--soft-peach);
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid rgba(212, 168, 83, 0.3);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            color: var(--golden-dark);
+            font-size: 1.2rem;
+        }
+
+        .gallery-arrow:hover {
+            background: var(--golden);
+            color: var(--white);
+            border-color: var(--golden);
+        }
+
+        .gallery-arrow.prev { left: -22px; }
+        .gallery-arrow.next { right: -22px; }
+
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(212, 168, 83, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0;
+        }
+
+        .gallery-dot.active {
+            background: var(--golden);
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-carousel-slide { min-width: 100%; }
+            .gallery-arrow { width: 36px; height: 36px; font-size: 1rem; }
+            .gallery-arrow.prev { left: -4px; }
+            .gallery-arrow.next { right: -4px; }
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials { background: var(--warm-cream); }
+
+        /* Reviews Carousel */
+        .reviews-carousel {
+            position: relative;
+        }
+
+        .reviews-carousel-track {
+            overflow: hidden;
+        }
+
+        .reviews-carousel-inner {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reviews-carousel-slide {
+            min-width: calc(100% / 3);
+            padding: 4px 14px;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid rgba(212, 168, 83, 0.3);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            color: var(--golden-dark);
+            font-size: 1.2rem;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--golden);
+            color: var(--white);
+            border-color: var(--golden);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .carousel-arrow.prev { left: -22px; }
+        .carousel-arrow.next { right: -22px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 28px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(212, 168, 83, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            background: var(--golden);
+            transform: scale(1.2);
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            font-family: 'Onest', sans-serif;
+            font-size: 4rem;
+            color: var(--golden);
+            opacity: 0.3;
+            position: absolute;
+            top: 16px;
+            left: 28px;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            color: var(--golden);
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--soft-peach);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-author span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .reviews-carousel-slide { min-width: 100%; }
+            .carousel-arrow { width: 36px; height: 36px; font-size: 1rem; }
+            .carousel-arrow.prev { left: -4px; }
+            .carousel-arrow.next { right: -4px; }
+        }
+
+        /* ===== GOOGLE REVIEWS HEADER ===== */
+        .google-reviews-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px 32px;
+            box-shadow: var(--shadow);
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .google-logo-rating {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .google-logo-rating svg {
+            flex-shrink: 0;
+        }
+
+        .google-rating-number {
+            font-family: 'Onest', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark-brown);
+            line-height: 1;
+            display: block;
+        }
+
+        .google-stars {
+            color: #FBBC05;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .google-review-count {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Reviews loading state */
+        .reviews-loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+        }
+
+        .reviews-loading .spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid var(--soft-peach);
+            border-top-color: var(--golden);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Google review card styling */
+        .google-review-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .google-review-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .google-review-card .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .google-review-card .review-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--soft-peach);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--golden-dark);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .google-review-card .review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .google-review-card .review-meta strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--dark-brown);
+        }
+
+        .google-review-card .review-meta span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .google-review-card .review-stars {
+            color: #FBBC05;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .google-review-card .review-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .google-review-card .google-icon {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            opacity: 0.4;
+        }
+
+        .review-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 36px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== REGION ===== */
+        .region {
+            background: linear-gradient(135deg, var(--dark-brown) 0%, var(--warm-brown) 100%);
+            color: var(--white);
+        }
+
+        .region .section-label { color: var(--golden); }
+        .region .section-title { color: var(--white); }
+
+        .region .section-subtitle {
+            color: rgba(255,255,255,0.75);
+        }
+
+        .region-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .region-tag {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .region-tag:hover {
+            background: var(--golden);
+            border-color: var(--golden);
+        }
+
+        .region-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 8px;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--soft-peach) 0%, #fce4c4 50%, var(--warm-cream) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212,168,83,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--dark-brown);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 560px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-contact-info {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .cta-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .cta-contact-item .icon { font-size: 1.2rem; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark-brown);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .nav-logo {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .footer-social a:hover { background: var(--golden); }
+
+        .footer h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer ul { list-style: none; }
+
+        .footer li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer li a:hover { color: var(--golden); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-content { max-width: 100%; }
+            .hero-text { max-width: 100%; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .hero-visual { order: -1; }
+            .hero-image-main { width: 340px; height: 420px; }
+            .hero-float-card.card-1 { left: -10px; }
+            .hero-float-card.card-2 { right: -10px; }
+
+            .about .container { grid-template-columns: 1fr; gap: 48px; }
+            .pricing-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 24px;
+                box-shadow: var(--shadow-lg);
+                gap: 16px;
+            }
+            .mobile-toggle { display: flex; }
+
+            section { padding: 72px 0; }
+            .features-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .about-features { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats { flex-direction: column; gap: 16px; align-items: center; }
+            .hero-image-main { width: 300px; height: 380px; }
+            .hero-float-card { padding: 10px 14px; }
+            .hero-float-card.card-1 { left: -15px; top: 20px; }
+            .hero-float-card.card-2 { right: -15px; bottom: 40px; }
+            .float-text strong { font-size: 0.8rem; }
+            .float-text span { font-size: 0.7rem; }
+            .trust-items { gap: 24px; }
+            .cta-contact-info { flex-direction: column; align-items: center; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <img src="Logo.png" alt="Dierenoppas Mel logo">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#over">Over Mel</a></li>
+                <li><a href="#diensten">Diensten</a></li>
+                <li><a href="#waarom">Waarom Mel</a></li>
+                <li><a href="#prijzen">Prijzen</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact" class="nav-cta">Contacteer mij</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    &#128205; Westhoek, Belgi&euml;
+                </div>
+                <h1>Huiselijke<br><span>hondenopvang</span><br>met liefde</h1>
+                <p class="hero-text">
+                    Geen kennels, wel een omheinde tuin van 3.000m&sup2; en een warme thuisomgeving met heel veel knuffels.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary"><span style="font-size: 1.3rem; line-height: 1;">&#128062;</span> Kennismakingsgesprek</a>
+                    <a href="#diensten" class="btn btn-secondary">Mijn diensten &rarr;</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>3.000m&sup2;</strong>
+                        <span>Omheinde tuin</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>24/7</strong>
+                        <span>Toezicht</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>100%</strong>
+                        <span>Huiselijk</span>
+                    </div>
+                    <div class="stat-item hero-review-score">
+                        <a href="#reviews" style="text-decoration: none; color: inherit;">
+                            <strong style="color: #fbbc05;">&#9733; 5.0</strong>
+                            <span>Google Reviews</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-main"><video src="mel-zwembad.mp4" autoplay muted loop playsinline></video></div>
+                <div class="hero-float-card card-1">
+                    <div class="float-icon peach">C</div>
+                    <div class="float-text">
+                        <span style="color: #FBBC05; font-size: 0.7rem; letter-spacing: 1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <strong>Celine Vermote</strong>
+                        <span>Gewoon een 6* hotel!</span>
+                    </div>
+                </div>
+                <div class="hero-float-card card-2">
+                    <div class="float-icon green">S</div>
+                    <div class="float-text">
+                        <span style="color: #FBBC05; font-size: 0.7rem; letter-spacing: 1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <strong>Serge Hollevoet</strong>
+                        <span>Echte dierenvrienden.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item"><span class="icon">&#127968;</span> Geen kennels</div>
+                <div class="trust-item"><span class="icon">&#127807;</span> 3.000m&sup2; tuin</div>
+                <div class="trust-item"><span class="icon">&#128247;</span> Foto-updates via WhatsApp</div>
+                <div class="trust-item"><span class="icon">&#128153;</span> Gediplomeerd dierverzorger</div>
+                <div class="trust-item"><span class="icon">&#128663;</span> Haal- &amp; brengservice</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS / GOOGLE REVIEWS -->
+    <section class="testimonials" id="reviews">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">&#11088; Reviews</span>
+                <h2 class="section-title">Wat baasjes vertellen</h2>
+            </div>
+
+            <!-- Google Reviews Summary Bar -->
+            <div class="google-reviews-header">
+                <div class="google-logo-rating">
+                    <svg viewBox="0 0 24 24" width="32" height="32"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    <div>
+                        <strong class="google-rating-number" id="googleRating">5.0</strong>
+                        <div class="google-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+                    <span class="google-review-count" id="googleCount">Google Reviews</span>
+                </div>
+                <a href="https://www.google.com/search?q=Dierenoppas+Mel+Veurne+reviews" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+                    Bekijk alle reviews op Google &#8599;
+                </a>
+            </div>
+
+            <!-- Elfsight Widget Container (auto-syncs with Google Reviews) -->
+            <div id="google-reviews-widget">
+                <!--
+                    ============================================
+                    GRATIS GOOGLE REVIEWS WIDGET - SETUP STAPPEN:
+                    ============================================
+
+                    1. Ga naar https://elfsight.com/google-reviews-widget/
+                    2. Klik op "Create widget for FREE"
+                    3. Zoek "Dierenoppas Mel" in de zoekbalk
+                    4. Kies een layout (bijv. "Slider" of "Grid")
+                    5. Pas kleuren aan (warm-cream: #FFF8F0, golden: #a7714b)
+                    6. Kopieer de embed code en plak die hieronder
+                    7. Verwijder de fallback reviews grid hieronder
+
+                    Voorbeeld embed code:
+                    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+                    <div class="elfsight-app-JOUW-ID-HIER"></div>
+
+                    Het widget synct automatisch met Google!
+                    Nieuwe reviews verschijnen automatisch.
+                    ============================================
+                -->
+            </div>
+
+            <!-- Reviews Carousel -->
+            <div class="reviews-carousel" id="reviewsCarousel">
+                <button class="carousel-arrow prev" id="carouselPrev" aria-label="Vorige reviews">&#10094;</button>
+                <button class="carousel-arrow next" id="carouselNext" aria-label="Volgende reviews">&#10095;</button>
+                <div class="reviews-carousel-track">
+                    <div class="reviews-carousel-inner" id="carouselInner">
+
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">C</div><div class="review-meta"><strong>Celine Vermote</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Mel is gewoon weg top, het is gewoon een 6* hotel voor de honden.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">P</div><div class="review-meta"><strong>Patrik Beelen</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Super verzorging, mooi concept en een gelukkige hond als we hem gingen terug halen. Zeker en vast een aanrader.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">A</div><div class="review-meta"><strong>Annelies Baert</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Ik heb Beau bruine labrador naar deze nieuwe oppas gedaan voor 6 zaterdagen, maar wat een plezier om telkens Beau zo enthousiast te zien als we aankomen. Ik zie dat ze er graag gaat. Maar ook telkens uitgeteld opweg naar huis. Een aanrader!!!!</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">S</div><div class="review-meta"><strong>Steve Cobbaert</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Zonder twijfel een geweldige ervaring met Melanie van Dierenoppas Mel! Tijdens Pukkelpop hebben we onze Maine Coon kittens aan haar toevertrouwd en ze heeft uitstekend voor ze gezorgd. Melanie straalt professionaliteit uit en nam de tijd om alles tot in de puntjes te regelen.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">C</div><div class="review-meta"><strong>Clotaire de Vuyst</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Wij en Viktor (onze ruwharige teckel) waren uiterst tevreden over de manier waarop Mel voor onze hond heeft gezorgd. Ze is zeer betrouwbaar en doet het met hart en ziel. Wij zullen zeker verder blijven samenwerken.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">F</div><div class="review-meta"><strong>Fran&ccedil;ois De Kock</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">100% vertrouwen, dat kom ik eerlijk gezegd niet dagelijks tegen. Een blijver. Mel is lang op voorhand geboekt, maar dat heeft wel een reden h&eacute;.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">B</div><div class="review-meta"><strong>Bernard Struelens</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Onze honden zijn met veel plezier gaan logeren bij Mel.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">V</div><div class="review-meta"><strong>Veerle Plasman</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Mel is een fantastische dogsitter met veel zorg en rust alsof het haar eigen kinderen zijn en weet perfect hoe een hond in elkaar zit. Mijn 2 Aussie Shepherds als mezelf zijn alvast fan!</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">L</div><div class="review-meta"><strong>Leen Brees</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Voor het eerst ons cavaliertje van 2 jaar naar haar gebracht. Super ervaring en de 2de keer liep hij al kwispelend naar haar toe!</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">I</div><div class="review-meta"><strong>Ingrid de Vos</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Heel tevreden over deze oppas. Elke keer foto's van onze poezenkindjes en alles was heel netjes. Professionele aanpak. Een absolute aanrader.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">M</div><div class="review-meta"><strong>Matthias Slembrouck</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Zeer betrouwbaar en goed verzorgd! Zeer tevreden. Veel dank van Ellypoes &amp; Odettiepoes.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">R</div><div class="review-meta"><strong>Rooms Delacauw</strong><span>Google Review</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Wat een liefde voor de dieren!!! Heel zeker een aanrader, niet twijfelen, telefoon nemen en afspraak maken.</p></div></div>
+                        <div class="reviews-carousel-slide"><div class="google-review-card"><svg class="google-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><div class="review-header"><div class="review-avatar">S</div><div class="review-meta"><strong>Serge Hollevoet</strong><span>Google Review &middot; Local Guide</span></div></div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">Super pension. Echte dierenvrienden.</p></div></div>
+
+                    </div>
+                </div>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+
+            <div class="review-buttons">
+                <a href="https://www.google.com/search?q=Dierenoppas+Mel+Veurne+reviews" target="_blank" rel="noopener" class="btn btn-primary">
+                    &#11088; Bekijk alle Google Reviews
+                </a>
+                <a href="https://search.google.com/local/writereview?placeid=PLACE_ID_HIER" target="_blank" rel="noopener" class="btn btn-secondary" id="writeReviewBtn">
+                    &#9998; Schrijf een review
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="over">
+        <div class="container">
+            <div class="about-images">
+                <div class="about-img"><img src="mel.png" alt="Mel met haar hond"></div>
+            </div>
+            <div class="about-text">
+                <span class="section-label">&#128075; Over mij</span>
+                <h2 class="section-title">Over mij</h2>
+                <p>
+                    Ik ben Melanie en woon in Houtem. Al heel mijn leven ligt mijn hart bij dieren.
+                    Ik verzorg ze met super veel liefde en plezier de kwispelende staarten, likjes
+                    spinnende pootjes, ... dit maakt mij gelukkig. De liefde dat je krijgt van een
+                    dier die geef ik terug aan hen.
+                </p>
+                <p>
+                    Ik heb zelf 4 honden ze zijn allemaal super lief en hebben hun eigen karaktertje.
+                    Ik heb dierenverzorging gestudeerd in thuisstudie en mijn diploma als
+                    dierenartsassistente behaald. Daarmee wil ik graag mijn liefde voor dieren
+                    delen met jullie!
+                </p>
+                <p>
+                    Bent u op zoek naar een liefdevolle dierenoppas aan huis wanneer u met vakantie
+                    gaat of in het ziekenhuis ligt of gewoon gaan werken bent? Of breng je liever
+                    uw hond in de opvang bij Mel? Dan kunt u gerust contact met mij opnemen!
+                </p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <span class="check">&#10003;</span>
+                        Gediplomeerd dierverzorger
+                    </div>
+                    <div class="about-feature">
+                        <span class="check">&#10003;</span>
+                        Veterinair assistent
+                    </div>
+                    <div class="about-feature">
+                        <span class="check">&#10003;</span>
+                        Ervaring met alle huisdieren
+                    </div>
+                    <div class="about-feature">
+                        <span class="check">&#10003;</span>
+                        Persoonlijk &amp; betrokken
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="diensten">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">&#128062; Diensten</span>
+                <h2 class="section-title">Mijn diensten</h2>
+            </div>
+            <div class="services-list-layout">
+                <div class="services-list-content">
+                    <ul class="services-checklist">
+                        <li>Dieren eten en drinken geven</li>
+                        <li>Opkuisen van uitwerpselen en eventuele ongelukjes</li>
+                        <li>Wandelen</li>
+                        <li>Brievenbus legen</li>
+                        <li>Optrekken en neerlaten van rolluiken</li>
+                        <li>Planten water geven</li>
+                        <li>Borstelen en kammen</li>
+                        <li>Kattenbakken proper maken</li>
+                        <li>Eventueel medicatie geven</li>
+                        <li>Kippen, cavia en konijn verzorgen</li>
+                        <li>Taxi vervoer naar dierenarts</li>
+                        <li>Luxe opvang bij Mel thuis &mdash; uw hond wordt opgevangen in huis</li>
+                    </ul>
+                    <p class="services-highlight">
+                        &#128247; U wordt op hoogte gehouden indien gewenst met foto's via WhatsApp of Messenger!
+                    </p>
+                    <div style="text-align: center;">
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 12px;"><span style="font-size: 1.3rem; line-height: 1;">&#128062;</span> Meer info of reserveren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE MEL -->
+    <section class="features" id="waarom">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">&#11088; Waarom Mel?</span>
+                <h2 class="section-title">Wat maakt het verschil</h2>
+                <p class="section-subtitle mx-auto">
+                    Jouw huisdier verdient meer dan een kennel. Bij Mel krijgt het een
+                    thuis weg van huis.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#127968;</div>
+                    <div>
+                        <h3>Echt huiselijk</h3>
+                        <p>Geen koude hokken, maar een warme woonkamer, zachte manden en een gezellige sfeer. Jouw hond leeft gewoon mee in huis.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#127793;</div>
+                    <div>
+                        <h3>Enorme omheinde tuin</h3>
+                        <p>3.000m&sup2; omheinde tuin waar honden vrij kunnen rennen, spelen en snuffelen. Veilig en avontuurlijk tegelijk.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128247;</div>
+                    <div>
+                        <h3>Dagelijkse updates</h3>
+                        <p>Via WhatsApp of Messenger ontvang je foto's en updates van je hond. Zo weet je altijd dat het goed gaat!</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128153;</div>
+                    <div>
+                        <h3>Persoonlijke aandacht</h3>
+                        <p>Elke hond is uniek. Mel neemt de tijd om elk dier te leren kennen en de verzorging aan te passen aan zijn of haar behoeften.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#127891;</div>
+                    <div>
+                        <h3>Gediplomeerd &amp; ervaren</h3>
+                        <p>Opgeleid als dierverzorger en veterinair assistent. Medicatie toedienen of bijzondere zorg? Geen probleem.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#127946;</div>
+                    <div>
+                        <h3>Eigen zwembad</h3>
+                        <p>Een zwembad van 7 bij 3 meter waar de honden heerlijk kunnen zwemmen en afkoelen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="prijzen">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">&#128176; Prijzen</span>
+                <h2 class="section-title">Transparante prijzen</h2>
+                <p class="section-subtitle mx-auto">
+                    Eerlijke prijzen voor liefdevolle zorg. Alle prijzen zijn inclusief btw.
+                </p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Oppas aan huis -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="emoji">&#127968;</span>
+                        <h3>Oppas aan huis</h3>
+                        <span class="desc">Bezoekjes bij jou thuis</span>
+                    </div>
+                    <div class="pricing-body">
+                        <ul>
+                            <li><span>1 bezoek / 30 min</span><span>&euro;15</span></li>
+                            <li><span>1 bezoek / 45 min</span><span>&euro;18</span></li>
+                            <li><span>1 bezoek / 1 uur</span><span>&euro;20</span></li>
+                            <li><span>2 bezoeken / 30 min</span><span>&euro;30</span></li>
+                            <li><span>2 bezoeken / 45 min</span><span>&euro;36</span></li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#contact" class="btn btn-secondary">Meer info</a>
+                    </div>
+                </div>
+
+                <!-- Logeren bij Mel -->
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Populair</span>
+                    <div class="pricing-header">
+                        <span class="emoji">&#128564;</span>
+                        <h3>Logeren bij Mel</h3>
+                        <span class="desc">Vakantie- &amp; dagopvang</span>
+                    </div>
+                    <div class="pricing-body">
+                        <ul>
+                            <li><span>Dagopvang (5:30 &ndash; 19:00)</span><span>&euro;25</span></li>
+                            <li><span>Dag &amp; nachtopvang</span><span>&euro;35</span></li>
+                            <li><span>Hoeve-dieren (per uur)</span><span>&euro;35</span></li>
+                            <li><span>3+ huisdieren</span><span>Op maat</span></li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#contact" class="btn btn-primary">Reserveer nu</a>
+                    </div>
+                </div>
+
+                <!-- Extra's -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="emoji">&#128663;</span>
+                        <h3>Extra's</h3>
+                        <span class="desc">Bijkomende diensten</span>
+                    </div>
+                    <div class="pricing-body">
+                        <ul>
+                            <li><span>Kilometervergoeding</span><span>&euro;0,45/km</span></li>
+                            <li><span>Heen- &amp; terugrit</span><span>Inbegrepen</span></li>
+                            <li><span>3 bezoeken / dag</span><span>Op maat</span></li>
+                            <li><span>Transport dierenarts</span><span>Op aanvraag</span></li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="#contact" class="btn btn-secondary">Vraag offerte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallerij">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-label">&#128248; Sfeerbeelden</span>
+                <h2 class="section-title">Een blik op het leven bij Mel</h2>
+            </div>
+            <div class="gallery-carousel" id="galleryCarousel">
+                <button class="gallery-arrow prev" id="galleryPrev" aria-label="Vorige foto's">&#10094;</button>
+                <button class="gallery-arrow next" id="galleryNext" aria-label="Volgende foto's">&#10095;</button>
+                <div class="gallery-carousel-track">
+                    <div class="gallery-carousel-inner" id="galleryInner">
+                        <div class="gallery-carousel-slide">
+                            <div class="gallery-item"><img src="wandeling.png" alt="Wandelen met de honden"></div>
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <div class="gallery-item"><img src="chowchow.png" alt="Chow Chow in de zon"></div>
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <div class="gallery-item"><img src="aussie.png" alt="Blije Australian Shepherd"></div>
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <div class="gallery-item"><img src="herder.png" alt="Duitse Herder thuis"></div>
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <div class="gallery-item"><img src="duinen.png" alt="Hond in de duinen"></div>
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <div class="gallery-item"><img src="mel.png" alt="Mel met haar hond"></div>
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <div class="gallery-item"><img src="zwembad1.jpeg" alt="Hond in het zwembad"></div>
+                        </div>
+                        <div class="gallery-carousel-slide">
+                            <div class="gallery-item"><img src="zwembad2.jpeg" alt="Mel en honden bij het zwembad"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-dots" id="galleryDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGION -->
+    <section class="region" id="regio">
+        <div class="container text-center">
+            <span class="section-label">&#128205; Werkgebied</span>
+            <h2 class="section-title">Actief in de Westhoek &amp; aan de kust</h2>
+            <p class="section-subtitle mx-auto">
+                Mel is actief in heel de Westhoek en langs de kust. Staat jouw gemeente er niet bij?
+                Neem gerust contact op!
+            </p>
+            <div class="region-tags">
+                <span class="region-tag">Alveringem</span>
+                <span class="region-tag">Veurne</span>
+                <span class="region-tag">Lo-Reninge</span>
+                <span class="region-tag">Diksmuide</span>
+                <span class="region-tag">Ieper</span>
+                <span class="region-tag">De Panne</span>
+                <span class="region-tag">Koksijde</span>
+                <span class="region-tag">Oostduinkerke</span>
+                <span class="region-tag">Nieuwpoort</span>
+            </div>
+            <p class="region-note">Andere locatie? Vraag gerust &mdash; in overleg is veel mogelijk!</p>
+        </div>
+    </section>
+
+    <!-- CTA / CONTACT -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <span class="section-label">&#128140; Contacteer mij</span>
+                <h2>Klaar om kennis te maken?</h2>
+                <p>
+                    Plan een vrijblijvend kennismakingsgesprek zodat ik jou en je hond
+                    kan leren kennen. Zo weet je zeker dat je huisdier in goede handen is!
+                </p>
+                <div class="cta-buttons">
+                    <a href="tel:+32496157594" class="btn btn-primary">&#128222; Bel mij: 0496 15 75 94</a>
+                    <a href="mailto:dierenoppasmel@gmail.com" class="btn btn-secondary">&#128231; Stuur een e-mail</a>
+                </div>
+                <div class="cta-contact-info">
+                    <div class="cta-contact-item">
+                        <span class="icon">&#128205;</span>
+                        Elzentapstraat 4, 8630 Veurne
+                    </div>
+                    <div class="cta-contact-item">
+                        <span class="icon">&#128231;</span>
+                        dierenoppasmel@gmail.com
+                    </div>
+                    <div class="cta-contact-item">
+                        <span class="icon">&#128222;</span>
+                        +32 496 15 75 94
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <img src="Logo.png" alt="Dierenoppas Mel logo" style="height: 64px; filter: brightness(0) invert(1) brightness(0.85);">
+                    </a>
+                    <p>Huiselijke hondenopvang &amp; dierenoppas in de Westhoek. Jouw huisdier verdient een thuis weg van huis.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/dierenoppasmel/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=100084250142588" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Diensten</h4>
+                    <ul>
+                        <li><a href="#diensten">Vakantie-opvang</a></li>
+                        <li><a href="#diensten">Oppas aan huis</a></li>
+                        <li><a href="#diensten">Haal- &amp; brengservice</a></li>
+                        <li><a href="#diensten">Dagopvang</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Regio</h4>
+                    <ul>
+                        <li>Alveringem</li>
+                        <li>Veurne &amp; omgeving</li>
+                        <li>De Panne &amp; Koksijde</li>
+                        <li>Diksmuide &amp; Ieper</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+32496157594">0496 15 75 94</a></li>
+                        <li><a href="mailto:dierenoppasmel@gmail.com">dierenoppasmel@gmail.com</a></li>
+                        <li>Elzentapstraat 4</li>
+                        <li>8630 Veurne, Belgi&euml;</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Dierenoppas Mel. Alle rechten voorbehouden.</span>
+                <a href="algemene-voorwaarden.html" style="color: rgba(255,255,255,0.7); text-decoration: underline;">Algemene Voorwaarden</a>
+                <span>Gemaakt met &#128153; voor dieren</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .pricing-card, .testimonial-card, .google-review-card').forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // ===== INFINITE CAROUSEL FACTORY =====
+        function initInfiniteCarousel(config) {
+            var inner = document.getElementById(config.innerId);
+            var slideClass = config.slideClass;
+            var prevBtn = document.getElementById(config.prevId);
+            var nextBtn = document.getElementById(config.nextId);
+            var dotsContainer = document.getElementById(config.dotsId);
+            var carouselEl = document.getElementById(config.carouselId);
+            var dotClass = config.dotClass;
+            var speed = config.speed || 6000;
+            var getPerView = config.getPerView || function() { return 1; };
+
+            var origSlides = inner.querySelectorAll('.' + slideClass);
+            var totalSlides = origSlides.length;
+            if (totalSlides <= 1) return;
+
+            function perView() { return getPerView(); }
+            function slidePercent() { return 100 / perView(); }
+
+            // Clone slides for infinite effect (clone enough for perView)
+            function setupClones() {
+                var clones = inner.querySelectorAll('.clone');
+                for (var c = 0; c < clones.length; c++) clones[c].remove();
+
+                var pv = perView();
+                for (var i = 0; i < pv; i++) {
+                    var firstClone = origSlides[i].cloneNode(true);
+                    firstClone.classList.add('clone');
+                    inner.appendChild(firstClone);
+                }
+                for (var j = totalSlides - pv; j < totalSlides; j++) {
+                    var lastClone = origSlides[j].cloneNode(true);
+                    lastClone.classList.add('clone');
+                    inner.insertBefore(lastClone, inner.children[j - (totalSlides - pv)]);
+                }
+            }
+
+            setupClones();
+
+            var currentIndex = perView(); // start at first real slide
+            var isTransitioning = false;
+            inner.style.transition = 'none';
+            inner.style.transform = 'translateX(-' + (currentIndex * slidePercent()) + '%)';
+
+            // Create dots
+            var totalDots = totalSlides;
+            for (var i = 0; i < totalDots; i++) {
+                var dot = document.createElement('button');
+                dot.className = dotClass + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', 'Ga naar slide ' + (i + 1));
+                dot.dataset.index = i;
+                dot.addEventListener('click', function() {
+                    if (isTransitioning) return;
+                    goToSlide(parseInt(this.dataset.index) + perView());
+                });
+                dotsContainer.appendChild(dot);
+            }
+
+            function updateDots() {
+                var realIndex = currentIndex - perView();
+                if (realIndex < 0) realIndex = totalSlides - 1;
+                if (realIndex >= totalSlides) realIndex = 0;
+                var dots = dotsContainer.querySelectorAll('.' + dotClass);
+                for (var i = 0; i < dots.length; i++) {
+                    dots[i].classList.toggle('active', i === realIndex);
+                }
+            }
+
+            function goToSlide(index) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex = index;
+                inner.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                inner.style.transform = 'translateX(-' + (currentIndex * slidePercent()) + '%)';
+                updateDots();
+            }
+
+            inner.addEventListener('transitionend', function() {
+                isTransitioning = false;
+                var pv = perView();
+                if (currentIndex < pv) {
+                    inner.style.transition = 'none';
+                    currentIndex = totalSlides + currentIndex;
+                    inner.style.transform = 'translateX(-' + (currentIndex * slidePercent()) + '%)';
+                } else if (currentIndex >= totalSlides + pv) {
+                    inner.style.transition = 'none';
+                    currentIndex = currentIndex - totalSlides;
+                    inner.style.transform = 'translateX(-' + (currentIndex * slidePercent()) + '%)';
+                }
+            });
+
+            prevBtn.addEventListener('click', function() { goToSlide(currentIndex - 1); });
+            nextBtn.addEventListener('click', function() { goToSlide(currentIndex + 1); });
+
+            var autoPlay = setInterval(function() { goToSlide(currentIndex + 1); }, speed);
+            carouselEl.addEventListener('mouseenter', function() { clearInterval(autoPlay); });
+            carouselEl.addEventListener('mouseleave', function() {
+                autoPlay = setInterval(function() { goToSlide(currentIndex + 1); }, speed);
+            });
+
+            var touchStartX = 0;
+            carouselEl.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+            carouselEl.addEventListener('touchend', function(e) {
+                var touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) goToSlide(currentIndex + 1);
+                if (touchEndX - touchStartX > 50) goToSlide(currentIndex - 1);
+            }, { passive: true });
+
+            // Handle resize
+            var lastPv = perView();
+            window.addEventListener('resize', function() {
+                var newPv = perView();
+                if (newPv !== lastPv) {
+                    lastPv = newPv;
+                    setupClones();
+                    currentIndex = newPv;
+                    inner.style.transition = 'none';
+                    inner.style.transform = 'translateX(-' + (currentIndex * slidePercent()) + '%)';
+                    updateDots();
+                }
+            });
+        }
+
+        // Gallery carousel
+        initInfiniteCarousel({
+            innerId: 'galleryInner',
+            slideClass: 'gallery-carousel-slide',
+            prevId: 'galleryPrev',
+            nextId: 'galleryNext',
+            dotsId: 'galleryDots',
+            carouselId: 'galleryCarousel',
+            dotClass: 'gallery-dot',
+            speed: 5000,
+            getPerView: function() { return window.innerWidth <= 768 ? 1 : 3; }
+        });
+
+        // Reviews carousel
+        initInfiniteCarousel({
+            innerId: 'carouselInner',
+            slideClass: 'reviews-carousel-slide',
+            prevId: 'carouselPrev',
+            nextId: 'carouselNext',
+            dotsId: 'carouselDots',
+            carouselId: 'reviewsCarousel',
+            dotClass: 'carousel-dot',
+            speed: 6000,
+            getPerView: function() { return window.innerWidth <= 768 ? 1 : 3; }
+        });
+    </script>
+
+</body>
+</html>
