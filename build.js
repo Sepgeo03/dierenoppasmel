@@ -47,7 +47,7 @@ function buildPricingItem(item) {
 }
 
 function buildGallerySlide(img) {
-  return `<div class="gallery-carousel-slide"><div class="gallery-item"><img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt)}"></div></div>`;
+  return `<div class="gallery-carousel-slide"><div class="gallery-item"><img src="${escapeHtml(img.url)}" alt="${escapeHtml(img.alt)}" width="800" height="800" loading="lazy"></div></div>`;
 }
 
 function buildRegionTag(name) {
@@ -192,7 +192,9 @@ async function build() {
   // === GALLERY ===
   if (gallery && gallery.length > 0) {
     const galleryHtml = gallery.map(img => {
-      const url = img.imageUrl || img.filename;
+      let url = img.imageUrl || img.filename;
+      // Convert to webp extension
+      url = url.replace(/\.(png|jpeg|jpg)$/i, '.webp');
       return buildGallerySlide({ url, alt: img.alt || '' });
     }).join('\n                        ');
     html = replaceInnerContent(html, '<div class="gallery-carousel-inner" id="galleryInner">', '\n                    </div>\n                </div>\n                <div class="gallery-dots"', '\n                        ' + galleryHtml + '\n                    ');
@@ -232,7 +234,7 @@ async function build() {
 
   // Copy all static assets to dist
   const staticFiles = fs.readdirSync(__dirname).filter(f =>
-    f.endsWith('.png') || f.endsWith('.jpeg') || f.endsWith('.jpg') || f.endsWith('.mp4') || f === 'algemene-voorwaarden.html'
+    f.endsWith('.png') || f.endsWith('.jpeg') || f.endsWith('.jpg') || f.endsWith('.webp') || f.endsWith('.mp4') || f === 'algemene-voorwaarden.html'
   );
   for (const file of staticFiles) {
     fs.copyFileSync(path.join(__dirname, file), path.join(__dirname, 'dist', file));

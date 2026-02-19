@@ -7,7 +7,8 @@
     <meta name="description" content="Luxe hondenhotel in een gezellige thuisomgeving in Veurne. Geen kennels, wel een omheinde tuin van 3.000m². Huiselijke hondenopvang & dierenoppas aan huis in de Westhoek.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Onest:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <style>
         /* ===== RESET & BASE ===== */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1382,7 +1383,7 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="nav-logo">
-                <img src="Logo.png" alt="Dierenoppas Mel logo">
+                <img src="Logo.webp" alt="Dierenoppas Mel logo" width="180" height="120" fetchpriority="high">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#over">Over Mel</a></li>
@@ -1435,7 +1436,7 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-image-main"><video src="mel-zwembad.mp4" autoplay muted loop playsinline></video></div>
+                <div class="hero-image-main"><video src="mel-zwembad.mp4" autoplay muted loop playsinline preload="none" poster="video-poster.webp" width="600" height="590"></video></div>
                 <div class="hero-float-card card-1">
                     <div class="float-icon peach">C</div>
                     <div class="float-text">
@@ -1558,7 +1559,7 @@
     <section class="about" id="over">
         <div class="container">
             <div class="about-images">
-                <div class="about-img"><img src="mel.png" alt="Mel met haar hond"></div>
+                <div class="about-img"><img src="mel.webp" alt="Mel met haar hond" width="800" height="786" loading="lazy"></div>
             </div>
             <div class="about-text">
                 <span class="section-label">&#128075; Over mij</span>
@@ -1783,28 +1784,28 @@
                 <div class="gallery-carousel-track">
                     <div class="gallery-carousel-inner" id="galleryInner">
                         <div class="gallery-carousel-slide">
-                            <div class="gallery-item"><img src="wandeling.png" alt="Wandelen met de honden"></div>
+                            <div class="gallery-item"><img src="wandeling.webp" alt="Wandelen met de honden" width="800" height="796" loading="lazy"></div>
                         </div>
                         <div class="gallery-carousel-slide">
-                            <div class="gallery-item"><img src="chowchow.png" alt="Chow Chow in de zon"></div>
+                            <div class="gallery-item"><img src="chowchow.webp" alt="Chow Chow in de zon" width="800" height="832" loading="lazy"></div>
                         </div>
                         <div class="gallery-carousel-slide">
-                            <div class="gallery-item"><img src="aussie.png" alt="Blije Australian Shepherd"></div>
+                            <div class="gallery-item"><img src="aussie.webp" alt="Blije Australian Shepherd" width="800" height="815" loading="lazy"></div>
                         </div>
                         <div class="gallery-carousel-slide">
-                            <div class="gallery-item"><img src="herder.png" alt="Duitse Herder thuis"></div>
+                            <div class="gallery-item"><img src="herder.webp" alt="Duitse Herder thuis" width="725" height="886" loading="lazy"></div>
                         </div>
                         <div class="gallery-carousel-slide">
-                            <div class="gallery-item"><img src="duinen.png" alt="Hond in de duinen"></div>
+                            <div class="gallery-item"><img src="duinen.webp" alt="Hond in de duinen" width="800" height="797" loading="lazy"></div>
                         </div>
                         <div class="gallery-carousel-slide">
-                            <div class="gallery-item"><img src="mel.png" alt="Mel met haar hond"></div>
+                            <div class="gallery-item"><img src="mel.webp" alt="Mel met haar hond" width="800" height="786" loading="lazy"></div>
                         </div>
                         <div class="gallery-carousel-slide">
-                            <div class="gallery-item"><img src="zwembad1.jpeg" alt="Hond in het zwembad"></div>
+                            <div class="gallery-item"><img src="zwembad1.webp" alt="Hond in het zwembad" width="600" height="800" loading="lazy"></div>
                         </div>
                         <div class="gallery-carousel-slide">
-                            <div class="gallery-item"><img src="zwembad2.jpeg" alt="Mel en honden bij het zwembad"></div>
+                            <div class="gallery-item"><img src="zwembad2.webp" alt="Mel en honden bij het zwembad" width="600" height="800" loading="lazy"></div>
                         </div>
                     </div>
                 </div>
@@ -1875,7 +1876,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="#" class="nav-logo">
-                        <img src="Logo.png" alt="Dierenoppas Mel logo" style="height: 64px; filter: brightness(0) invert(1) brightness(0.85);">
+                        <img src="Logo.webp" alt="Dierenoppas Mel logo" width="96" height="64" loading="lazy" style="height: 64px; filter: brightness(0) invert(1) brightness(0.85);">
                     </a>
                     <p>Huiselijke hondenopvang &amp; dierenoppas in de Westhoek. Jouw huisdier verdient een thuis weg van huis.</p>
                     <div class="footer-social">
