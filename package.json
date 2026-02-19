@@ -1,0 +1,25 @@
+{
+  "name": "dierenoppasmel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "seed": "node seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sepgeo03/dierenoppasmel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sepgeo03/dierenoppasmel/issues"
+  },
+  "homepage": "https://github.com/Sepgeo03/dierenoppasmel#readme",
+  "dependencies": {
+    "@sanity/client": "^7.15.0"
+  }
+}
