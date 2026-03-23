@@ -821,6 +821,7 @@
             justify-content: center;
             gap: 8px;
             margin-top: 24px;
+            width: 100%;
         }
 
         .gallery-dot {
@@ -903,6 +904,7 @@
             justify-content: center;
             gap: 8px;
             margin-top: 28px;
+            width: 100%;
         }
 
         .carousel-dot {
@@ -1185,6 +1187,15 @@
             font-size: 0.9rem;
             color: rgba(255,255,255,0.6);
             margin-top: 8px;
+        }
+
+        .region-map {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.15);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         }
 
         /* ===== CTA SECTION ===== */
@@ -1757,7 +1768,7 @@
                     </div>
                     <div class="pricing-body">
                         <ul>
-                            <li><span>Kilometervergoeding</span><span>&euro;0,45/km</span></li>
+                            <li><span>Kilometervergoeding</span><span>&euro;0,65/km</span></li>
                             <li><span>Heen- &amp; terugrit</span><span>Inbegrepen</span></li>
                             <li><span>3 bezoeken / dag</span><span>Op maat</span></li>
                             <li><span>Transport dierenarts</span><span>Op aanvraag</span></li>
@@ -1835,6 +1846,17 @@
                 <span class="region-tag">Nieuwpoort</span>
             </div>
             <p class="region-note">Andere locatie? Vraag gerust &mdash; in overleg is veel mogelijk!</p>
+            <div class="region-map">
+                <iframe
+                    src="https://maps.google.com/maps?q=Dierenoppas+Mel+Veurne&z=15&output=embed"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
     </section>
 
@@ -1849,7 +1871,7 @@
                     kan leren kennen. Zo weet je zeker dat je huisdier in goede handen is!
                 </p>
                 <div class="cta-buttons">
-                    <a href="tel:+32496157594" class="btn btn-primary">&#128222; Bel mij: 0496 15 75 94</a>
+                    <a href="tel:+32496157594" class="btn btn-primary">&#128222; Bel mij</a>
                     <a href="mailto:dierenoppasmel@gmail.com" class="btn btn-secondary">&#128231; Stuur een e-mail</a>
                 </div>
                 <div class="cta-contact-info">
@@ -1915,7 +1937,7 @@
             <div class="footer-bottom">
                 <span>&copy; 2025 Dierenoppas Mel. Alle rechten voorbehouden.</span>
                 <a href="algemene-voorwaarden.html" style="color: rgba(255,255,255,0.7); text-decoration: underline;">Algemene Voorwaarden</a>
-                <span>Gemaakt met &#128153; voor dieren</span>
+                <span>Gemaakt door GS Digital</span>
             </div>
         </div>
     </footer>
