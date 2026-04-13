@@ -164,27 +164,25 @@ async function build() {
 
   // === PRICING ===
   // Hardcoded overrides for specific pricing items
-  if (pricing && pricing.length > 0) {
-    pricing = pricing.map(card => {
-      if (card.title === "Extra's") {
-        return {
-          ...card,
-          items: card.items.map(item => {
-            if (item.label === 'Heen- & terugrit' || item.label === 'Ophaaldienst') {
-              return { ...item, label: 'Ophaaldienst', price: '€25', note: 'binnen 30km, daarboven +€0,65/km' };
-            }
-            if (item.label === 'Kilometervergoeding') {
-              return { ...item, price: '€0,65/km' };
-            }
-            return item;
-          })
-        };
-      }
-      return card;
-    });
-  }
-  if (pricing && pricing.length > 0) {
-    const pricingHtml = pricing.map(card => {
+  const pricingOverridden = (pricing || []).map(card => {
+    if (card.title === "Extra's") {
+      return {
+        ...card,
+        items: card.items.map(item => {
+          if (item.label === 'Heen- & terugrit' || item.label === 'Ophaaldienst') {
+            return { ...item, label: 'Ophaaldienst', price: '€25', note: 'binnen 30km, daarboven +€0,65/km' };
+          }
+          if (item.label === 'Kilometervergoeding') {
+            return { ...item, price: '€0,65/km' };
+          }
+          return item;
+        })
+      };
+    }
+    return card;
+  });
+  if (pricingOverridden && pricingOverridden.length > 0) {
+    const pricingHtml = pricingOverridden.map(card => {
       const isFeatured = card.featured ? ' featured' : '';
       const badge = card.featured ? `<span class="pricing-badge">${escapeHtml(card.badge || 'Populair')}</span>` : '';
       const items = card.items.map(buildPricingItem).join('\n                            ');
