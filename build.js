@@ -43,7 +43,8 @@ function buildServiceItem(item) {
 }
 
 function buildPricingItem(item) {
-  return `<li><span>${escapeHtml(item.label)}</span><span>${escapeHtml(item.price)}</span></li>`;
+  const note = item.note ? `<small style="display:block;font-size:0.78em;color:var(--text-light)">${escapeHtml(item.note)}</small>` : '';
+  return `<li><span>${escapeHtml(item.label)}</span><span style="${item.note ? 'text-align:right' : ''}">${escapeHtml(item.price)}${note}</span></li>`;
 }
 
 function buildGallerySlide(img) {
@@ -162,6 +163,26 @@ async function build() {
   }
 
   // === PRICING ===
+  // Hardcoded overrides for specific pricing items
+  if (pricing && pricing.length > 0) {
+    pricing = pricing.map(card => {
+      if (card.title === "Extra's") {
+        return {
+          ...card,
+          items: card.items.map(item => {
+            if (item.label === 'Heen- & terugrit' || item.label === 'Ophaaldienst') {
+              return { ...item, label: 'Ophaaldienst', price: '€25', note: 'binnen 30km, daarboven +€0,65/km' };
+            }
+            if (item.label === 'Kilometervergoeding') {
+              return { ...item, price: '€0,65/km' };
+            }
+            return item;
+          })
+        };
+      }
+      return card;
+    });
+  }
   if (pricing && pricing.length > 0) {
     const pricingHtml = pricing.map(card => {
       const isFeatured = card.featured ? ' featured' : '';
